@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Adrian Brasoveanu</title>
+    <meta name="description" content="">
+    <meta name="author" content="Adrian Brasoveanu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://abrsvn.github.io/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/local.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/pygments.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="https://abrsvn.github.io/index.html">Adrian Brasoveanu</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+
+
+        </ul>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>[Winter 2010] Tutorial on quantitative corpus linguistics and&nbsp;R</h1>
+Tue 27 December 2011
+
+by Adrian Brasoveanu
+ 
+
+
+        </div>
+	
+        <div><p>Why corpus linguistics? Here&#8217;s part of the conclusion of <a href="http://www.vinartus.net/spa/95c.pdf">Abney (1996)</a> (&#8220;Statistical methods and linguistics&#8221;); see also <a href="http://mitpress.mit.edu/books/chapters/0262133601chap1.pdf">chapter 1</a> of Manning <span class="amp">&amp;</span> Schuetze (1999) (&#8220;Foundations of Statistical Natural Language&nbsp;Processing&#8221;):</p>
+<blockquote>
+<p>In closing, let me repeat the main line of argument as concisely as I can. Statistical methods—by which I mean primarily weighted grammars and distributional induction methods—are clearly relevant to language acquisition, language change, language variation, language generation, and language comprehension. Understanding language in this broad sense is the ultimate goal of linguistics. The issues to which weighted grammars apply, particularly as concerns perception of grammaticality and ambiguity, one may be tempted to dismiss as performance issues.  However, the set of issues labelled &#8220;performance&#8221; are not essentially computational, as one is often led to believe. Rather, “competence” represents a provisional narrowing and simplification of data in order to understand the algebraic properties of language. “Performance” is a misleading term for “everything else”. Algebraic methods are inadequate for understanding many important properties of human language, such as the measure of goodness that permits one to identify the correct parse out of a large candidate set in the face of considerable noise. [&#8230;] The focus in computational linguistics has admittedly been on technology. But the same techniques promise progress at long last on questions about the nature of language that have been mysterious for so long. The time is ripe to apply&nbsp;them.</p>
+</blockquote>
+<p>This tutorial is based primarily on <a href="http://www.linguistics.ucsb.edu/faculty/stgries/research/qclwr/qclwr.html">Gries (2009)</a>; see the references in the R scripts for additional&nbsp;sources.</p>
+<p>The original <span class="caps">CLG</span> script files are not available; they are listed here for historical/reference purposes&nbsp;only.</p>
+<ol>
+<li>
+<p>Intro to&nbsp;R: <code>CLG-meeting-1.r</code></p>
+</li>
+<li>
+<p>Indexing, slicing, logical <span class="amp">&amp;</span> set operators,&nbsp;counting: <code>CLG-meeting-2.r</code></p>
+</li>
+<li>
+<p>Raw input, basic graphics, intro to data&nbsp;frames: <code>CLG-meeting-3.r</code></p>
+</li>
+<li>
+<p>Subsetting, editing and ordering data frames, lists, more graphics, introducing the Brown&nbsp;corpus: <code>CLG-meeting-4.r</code>, <a href="/files/brown_text_categories.txt">brown-text-categories.txt</a>, <a href="/files/brown_tag_set.txt">brown-tag-set.txt</a></p>
+</li>
+<li>
+<p>Elementary programming functions (if, while, repeat, next, break, for loops etc.), taking advantage of the vectorial nature of R, general programming&nbsp;tips: <code>CLG-meeting-5.r</code></p>
+</li>
+<li>
+<p>Character/string processing, searching <span class="amp">&amp;</span> replacing w/o regular expressions, intro to regular expressions (disjunction, character classes, wildcard, negation, various abbreviations for character classes, quantifiers, non-greedy matching, back-referencing, look-around), putting it all&nbsp;together: <code>CLG-meeting-6.r</code></p>
+</li>
+<li>
+<p>Using R in corpus linguistics: frequency lists for unannotated corpora, reverse frequency lists for unannotated corpora, frequency lists for annotated corpora, frequency lists of word-tag sequences, frequency lists of word&nbsp;pairs: <code>CLG-meeting-7.r</code></p>
+</li>
+<li>
+<p>Concordances for unannotated corpora and for annotated (<span class="caps">SGML</span> <span class="caps">POS</span>-tagged) corpora, linguistic applications (potential prepositional verbs with &#8220;in&#8221;, preposition stranding in questions, potential verb-particle constructions, potential cognate object&nbsp;constructions): <code>CLG-meeting-8.r</code>, <code>exact-matches.r</code></p>
+</li>
+<li>
+<p>Lemma-based concordances for <span class="caps">POS</span>-tagged and lemmatized corpora,&nbsp;collocations: <code>CLG-meeting-9.r</code></p>
+</li>
+</ol></div>
+	
+        <hr>
+    	   
+    </div>
+        </div>
+
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                Site
+                </li>
+
+                <li><a href="https://abrsvn.github.io/index.html">Home</a></li>
+
+
+
+
+                <!---
+                <li><a href="https://abrsvn.github.io/archives.html">Archives</a>
+                -->                
+                <!---
+                <li><a href="https://abrsvn.github.io/tags.html">Tags</a>
+                -->
+            </ul>
+            </div>
+
+
+
+
+
+
+        </div>     </div>     </div> 
+        <footer id="contentinfo" class="body">
+                <br>
+                <br>
+                <address id="about" class="vcard body">Site created with <a href="http://docs.getpelican.com/">Pelican</a> by Adrian Brasoveanu.</address>
+                <!---
+                <p><a href="https://abrsvn.github.io">Adrian Brasoveanu</a> &copy; Adrian Brasoveanu</p>
+                -->
+        </footer>
+</div>
+</body>
+</html>

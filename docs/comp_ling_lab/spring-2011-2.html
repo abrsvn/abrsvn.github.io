@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Adrian Brasoveanu</title>
+    <meta name="description" content="">
+    <meta name="author" content="Adrian Brasoveanu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://abrsvn.github.io/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/local.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/pygments.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="https://abrsvn.github.io/index.html">Adrian Brasoveanu</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+
+
+        </ul>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>[Spring 2011] Intro to Bayesian data&nbsp;analysis</h1>
+Wed 28 December 2011
+
+by Adrian Brasoveanu
+ 
+
+
+        </div>
+	
+        <div><p>A very nice compact argument for Bayesian methods can be found in <a href="http://www.indiana.edu/~kruschke/">John Kruschke</a>&#8216;s <a href="http://onlinelibrary.wiley.com/doi/10.1002/wcs.72/pdf">Bayesian Data Analysis</a>, <em>WIREs Cognitive Science</em> 1, 658-676. Here&#8217;s the very beginning of the article (followed by a section entitled &#8220;The road to <span class="caps">NHST</span> is paved with good&nbsp;intentions&#8221;):</p>
+<blockquote>
+<p>This brief article assumes that you, dear reader, are a practitioner of null hypothesis significance testing, hereafter abbreviated as <span class="caps">NHST</span>. In collecting data, you take care to insulate the data from your intentions. For example, double-blind procedures in clinical trials insulate the data from experimenter intentions. [&#8230;] After carefully collecting the data, you then go through the ritual invocation of p &lt; 0.05. Did you know that the computation of the p-value depends crucially on the covert intentions of the analyst, or the analyst&#8217;s interpretations of the unknowable intentions of the data collector?  This is true despite the emphasis by the data collector to make the data unaffected by his/her intentions, as will be shown below.  Moreover, for any set of data, an intention can be found for which p is not less than 0.05. There is a better way to draw inferences from data. Bayesian data analysis is gaining acceptance in many fields as the best way to conduct data analysis, but many disciplines within cognitive science have been slow to re-tool. This brief article reviews a fundamental problem with <span class="caps">NHST</span>, and shows some of the advantages of Bayesian data analysis. [&#8230;] This article emphasizes the fatal role of experimenter intention in <span class="caps">NHST</span>, and that this fault is inherent in confidence intervals too. The article highlights multiple comparisons of groups as an illustration of the advantages of Bayesian analysis. This article also presents two perspectives on Bayesian interpretation of null effects. Finally, this article describes Bayesian approaches to statistical power, more generally framed as the probability of achieving a research&nbsp;goal.</p>
+</blockquote>
+<p>A good way to start thinking about the differences between Bayesian and frequentist approaches is to think about the two-envelope problem along the lines outlined in the very short article <a href="http://www.jstor.org/stable/pdfplus/2685310.pdf">Bayesian Resolution of the &#8220;Exchange Paradox&#8221;</a> (Ronald Christensen <span class="amp">&amp;</span> Jessica Utts 1992; in <em>The American Statistician</em> 46:4, 274-276). Here&#8217;s the very beginning of the&nbsp;article:</p>
+<blockquote>
+<p>One of the arguments in favor of using Bayesian methods is that prior assumptions are made explicit rather than being incorporated implicitly into the solution of a problem. In this article we discuss an interesting paradox and show how explicit use of prior assumptions leads to its resolution. The paradox is also resolved using a frequentist argument and illustrates the pitfalls of using symmetry incorrectly. It shows that careful thinking is important in solving probability problems and elucidates the difference between the Bayesian and frequentist approaches. [&#8230;] A swami puts <em>m</em> dollars in one envelope, and <em>2m</em> dollars in another. He hands one envelope to you and one to your opponent, so that the probability is 1/2 that you get either envelope. You open your envelope and find <em>x</em> dollars. Let <em>Y</em> be the amount in your opponent&#8217;s envelope. You reason that since the envelopes were handed out with equal probability, <em>Y = x/2</em> or <em>Y = 2x</em>, each with probability 1/2. Thus, your expected winnings from a trade are <em>1/2(x/2 + 2x) = 5x/4</em> which is obviously greater than the <em>x</em> dollars you currently possess. With a gleam in your eye, you offer to trade envelopes with your opponent. Since she has made the same calculation, she readily agrees. The paradox of this problem is that the rule indicating that one should always trade is intuitively unreasonable while the method of arriving at the rule seems very&nbsp;reasonable.</p>
+</blockquote>
+<p>We&#8217;ll be using WinBUGS; if you&#8217;re using MacOS or Linux, you need to install a Windows emulator, e.g., <a href="http://www.winehq.org/"><span class="caps">WINE</span></a>, then download the Windows version of R and install it within <span class="caps">WINE</span>, then download and install <a href="http://www.mrc-bsu.cam.ac.uk/bugs/winbugs/contents.shtml">WinBUGS</a>.</p>
+<ol>
+<li>
+<p>Basic notions (Bayesian vs. frequentist data analysis, posterior distribution proportional to prior distribution times the likelihood, Bayesian parameter estimation), Markov Chain Monte Carlo (<span class="caps">MCMC</span>), basic examples of Markov chains, simulating the Monty Hall problem, convergence monitoring, why do we care about Bayesian methods: <a href="/files/CLG_bayes_winbugs_spring2011_1.r"><span class="caps">CLG</span>-bayes-winbugs-spring2011-1.r</a>.  </p>
+<p>Plan for the following meetings: we will discuss increasingly complex models; for each model, we simulate the data, provide its frequentist analysis using R and its Bayesian analysis with WinBUGS (run from R; no point <span class="amp">&amp;</span> click); we start with the mean model, then introduce various linear models (t-tests, ANOVAs etc.) without and with random effects, then move on to generalized linear&nbsp;models.</p>
+</li>
+<li>
+<p>The mean model, simulated data, R analysis, WinBUGS analysis, the structure of WinBUGS models, reexpressing parameters, number of chains, number of iterations, burnin, thinning, the Brooks-Gelman-Rubin (<span class="caps">BGR</span>) convergence diagnostic (a.k.a. Rhat), graphical summaries of posterior distributions, essentials of linear models (focus on design matrices), t-tests with equal and unequal variances (simulated data, R analysis, WinBUGS analysis): <a href="/files/CLG_bayes_winbugs_spring2011_2.r"><span class="caps">CLG</span>-bayes-winbugs-spring2011-2.r</a>.</p>
+</li>
+<li>
+<p>Simple linear regression (simulated data, R analysis, WinBUGS analysis), goodness-of-fit assessment in Bayesian analyses (posterior predictive distributions and Bayesian p-values), interpretation of confidence vs.  credible intervals, fixed-effects 1-way <span class="caps">ANOVA</span> (simulated data, R analysis, WinBUGS analysis), random-effects 1-way <span class="caps">ANOVA</span> (simulated data, R analysis, WinBUGS analysis): <a href="/files/CLG_bayes_winbugs_spring2011_3.r"><span class="caps">CLG</span>-bayes-winbugs-spring2011-3.r</a>.</p>
+</li>
+<li>
+<p>2-way <span class="caps">ANOVA</span> w/o and w/ interactions (simulated data, R analysis, WinBUGS analysis), <span class="caps">ANCOVA</span> and the importance of covariate standardization (simulated data, R analysis, WinBUGS analysis), linear mixed-effects models&#8212;-random intercepts only, independent random intercepts and slopes, correlated random intercepts and slopes (simulated data, R analysis, WinBUGS analysis): <a href="/files/CLG_bayes_winbugs_spring2011_4.r"><span class="caps">CLG</span>-bayes-winbugs-spring2011-4.r</a>.</p>
+</li>
+<li>
+<p>Generalized linear models, Poisson &#8220;t-test&#8221; (simulated data, R analysis, WinBUGS analysis), Binomial &#8220;t-test&#8221; (simulated data, R analysis, WinBUGS analysis), Binomial <span class="caps">GLMM</span> (simulated data, R analysis, WinBUGS analysis), GLMMs that take into account inter-annotator disagreement (simulated data, R analysis, WinBUGS analysis): <a href="/files/CLG_bayes_winbugs_spring2011_5.r"><span class="caps">CLG</span>-bayes-winbugs-spring2011-5.r</a>.</p>
+</li>
+</ol></div>
+	
+        <hr>
+    	   
+    </div>
+        </div>
+
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                Site
+                </li>
+
+                <li><a href="https://abrsvn.github.io/index.html">Home</a></li>
+
+
+
+
+                <!---
+                <li><a href="https://abrsvn.github.io/archives.html">Archives</a>
+                -->                
+                <!---
+                <li><a href="https://abrsvn.github.io/tags.html">Tags</a>
+                -->
+            </ul>
+            </div>
+
+
+
+
+
+
+        </div>     </div>     </div> 
+        <footer id="contentinfo" class="body">
+                <br>
+                <br>
+                <address id="about" class="vcard body">Site created with <a href="http://docs.getpelican.com/">Pelican</a> by Adrian Brasoveanu.</address>
+                <!---
+                <p><a href="https://abrsvn.github.io">Adrian Brasoveanu</a> &copy; Adrian Brasoveanu</p>
+                -->
+        </footer>
+</div>
+</body>
+</html>

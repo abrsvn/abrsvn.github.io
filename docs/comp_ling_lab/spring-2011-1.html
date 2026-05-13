@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Adrian Brasoveanu</title>
+    <meta name="description" content="">
+    <meta name="author" content="Adrian Brasoveanu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://abrsvn.github.io/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/local.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/pygments.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="https://abrsvn.github.io/index.html">Adrian Brasoveanu</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+
+
+        </ul>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>[Spring 2011] GLMs <span class="amp">&amp;</span> GLMMs&nbsp;(ctd.)</h1>
+Wed 28 December 2011
+
+by Adrian Brasoveanu
+ 
+
+
+        </div>
+	
+        <div><p><strong>Plan:</strong> linear regression wrap-up; introduce logistic regression models, maximum likelihood estimation of their parameters and the frequentist quantification of the uncertainty associated with those estimates; introduce the Bayesian approach to regression models with the goal of having a flexible way to estimate all sorts of logistic regression models, including binary / binomial, polytomous / multinomial and ordinal regression models, with and without random effects (this kind of models crop up all the time in linguistic data&nbsp;analysis).</p>
+<p><strong>The minimum</strong> we will hopefully do: binary logistic regression (and Poisson regression / log-linear models) with and without random effects, both the frequentist and the Bayesian way (using R and WinBUGS); we will use simulated data for a variety of regression models and discuss in detail how to obtain such data. This completes the tutorial on linear regression from spring 2010 <span class="amp">&amp;</span> fall&nbsp;2010.</p>
+<ol>
+<li>
+<p>Quick recap (what is the interpretation of a particular coefficient in multiple linear regression); regression assumptions / model misspecification; checking linearity; basic variable transformations; checking error assumptions: constant variance, normality, correlated errors; finding unusual observations: outliers, leverage, the jackknife, influential observations; some more notes about (multi)collinearity: <a href="/files/CLG_linear_regression_spring2011.r"><span class="caps">CLG</span>-linear-regression-spring2011.r</a></p>
+</li>
+<li>
+<p>Intro to logistic regression; motivating dataset (<span class="caps">CHD</span>\~<span class="caps">AGE</span>) available <a href="ftp://ftp.wiley.com/public/sci_tech_med/logistic/">here</a>; logistic vs. linear regression; intro to generalized linear models; probabilities vs. odds vs. log-odds / logits; quick heuristic for interpreting logits (divide the logit by 4 and you get the approximate shift in probability relative to chance, i.e., relative to 0.5 probability); two different ways to conceptualize probabilities as areas under the pdf of the logistic distribution (one of them is standard for binomial logistic regression; the other one opens the way towards ordinal logistic regression); the logistic regression for the motivating dataset: <a href="/files/CLG_logistic_regression_spring2011_1.r"><span class="caps">CLG</span>-logistic-regression-spring2011-1.r</a></p>
+</li>
+<li>
+<p>A couple of simple examples of glms, a simple binomial <span class="caps">ANOVA</span> and a simple binomial <span class="caps">ANCOVA</span>, simulating a dataset for a simple logistic regression model, a detailed analysis of a linguistic example (Henrietta Cedergren&#8217;s 1973 study of /s/-deletion in Panama Spanish, based on some of Chris Manning&#8217;s <a href="http://nlp.stanford.edu/~manning/courses/ling289/">materials</a>), a simple ordinal logistic regression: <a href="/files/CLG_logistic_regression_spring2011_2.r"><span class="caps">CLG</span>-logistic-regression-spring2011-2.r</a></p>
+</li>
+<li>
+<p>Three simple examples of mixed-effects models (2 lmms and 1 glmm); comparison of (<em>i</em>) a &#8220;complete pooling&#8221; approach (analysis done at the individual level; individuals treated as independent), (<em>ii</em>) aggregation approach (analysis done at the cluster level on aggregate measures, addresses a different question than analysis at the lower level, subject to ecological fallacies), (<em>iii</em>) a &#8220;no pooling&#8221; approach (clusters treated as a fixed effect that is covaried out, i.e., a multiple regression with a dummy variable coding for the groups) and (<em>iv</em>) multilevel modeling: a &#8220;partial pooling&#8221; approach, intermediate between (<em>i</em>) and (<em>iii</em>) and able to provide the group-level estimates that are the main goal of (<em>ii</em>); allowing for the estimates of variance components to be 0; allowing for random slopes in addition to random intercepts; measurements nested within subjects: <a href="/files/CLG_mixed_effects_basics_spring2011.r"><span class="caps">CLG</span>-mixed-effects-basics-spring2011.r</a></p>
+</li>
+</ol></div>
+	
+        <hr>
+    	   
+    </div>
+        </div>
+
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                Site
+                </li>
+
+                <li><a href="https://abrsvn.github.io/index.html">Home</a></li>
+
+
+
+
+                <!---
+                <li><a href="https://abrsvn.github.io/archives.html">Archives</a>
+                -->                
+                <!---
+                <li><a href="https://abrsvn.github.io/tags.html">Tags</a>
+                -->
+            </ul>
+            </div>
+
+
+
+
+
+
+        </div>     </div>     </div> 
+        <footer id="contentinfo" class="body">
+                <br>
+                <br>
+                <address id="about" class="vcard body">Site created with <a href="http://docs.getpelican.com/">Pelican</a> by Adrian Brasoveanu.</address>
+                <!---
+                <p><a href="https://abrsvn.github.io">Adrian Brasoveanu</a> &copy; Adrian Brasoveanu</p>
+                -->
+        </footer>
+</div>
+</body>
+</html>

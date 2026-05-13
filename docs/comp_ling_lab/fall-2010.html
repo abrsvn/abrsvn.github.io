@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Adrian Brasoveanu</title>
+    <meta name="description" content="">
+    <meta name="author" content="Adrian Brasoveanu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://abrsvn.github.io/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/local.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/pygments.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="https://abrsvn.github.io/index.html">Adrian Brasoveanu</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+
+
+        </ul>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>[Fall 2010] Quantifier Scope, Intro to GLMs and <span class="caps">GLMMS</span></h1>
+Wed 28 December 2011
+
+by Adrian Brasoveanu
+ 
+
+
+        </div>
+	
+        <div><p><strong>Plan</strong>: talk about the analysis of a subpart of the quantifier-scope-tagged corpus that Scott AnderBois, Robert Henderson and I have been working on over the last year; we will focus exclusively on sentences with 2&nbsp;quantifiers.</p>
+<p><strong>Main goal</strong>: provide motivation for continuing the discussion of linear regression from last quarter and then move on to generalized linear models (glm), generalized linear mixed-effects models (glmm) and show how we can estimate such models in <a href="http://www.mrc-bsu.cam.ac.uk/bugs/"><span class="caps">BUGS</span></a> in addition to the functions already available in&nbsp;R.</p>
+<p>Additional motivation for our glm, glmm <span class="amp">&amp;</span> <span class="caps">BUGS</span> plan is provided by the following papers and&nbsp;book:</p>
+<ul>
+<li><a href="http://nlp.stanford.edu/~manning/papers/probsyntax.pdf">Probabilistic Syntax</a>. Christopher D. Manning. In Rens Bod, Jennifer Hay, and Stefanie Jannedy (eds.), Probabilistic Linguistics, <span class="caps">MIT</span> Press,&nbsp;2003.</li>
+<li><a href="http://www.ling.upenn.edu/~ycharles/papers/crunch.pdf">The Great Number Crunch</a>, Charles Yang. Journal of Linguistics 44, 2008, 205-228 (provides a nice overview and discussion of several papers, including &#8220;Probabilistic&nbsp;Syntax&#8221;).</li>
+<li><a href="http://www.sciencedirect.com/science?_ob=MImg&amp;_imagekey=B6WK4-4RSRPYS-1-9&amp;_cdi=6896&amp;_user=145269&amp;_pii=S0749596X07001337&amp;_origin=search&amp;_coverDate=11%2F30%2F2008&amp;_sk=999409995&amp;view=c&amp;wchp=dGLzVzb-zSkzk&amp;md5=d9ccbc24d37bf1bd7b06fcb1ae200993&amp;ie=/sdarticle.pdf">Categorical Data Analysis: Away from ANOVAs (transformation or not) and towards Logit Mixed Models</a>, T. Florian Jaeger. Journal of
+    Memory and Language, Volume 59, Issue 4, November 2008,&nbsp;434-446.</li>
+<li><a href="http://www.sciencedirect.com/science?_ob=MImg&amp;_imagekey=B6WK4-4SBYYFN-1-3&amp;_cdi=6896&amp;_user=145269&amp;_pii=S0749596X08000193&amp;_origin=search&amp;_coverDate=11%2F30%2F2008&amp;_sk=999409995&amp;view=c&amp;wchp=dGLbVlb-zSkzS&amp;md5=93efd51c3105e23cc1093aeb39a3130e&amp;ie=/sdarticle.pdf">Examples of Mixed-effects Modeling with Crossed Random Effects and with Binomial Data</a>, Hugo Quene <span class="amp">&amp;</span> Huub van den Bergh. Journal of Memory and Language, Volume 59, Issue 4, November 2008,&nbsp;413-425.</li>
+<li><a href="http://www.sciencedirect.com/science?_ob=MImg&amp;_imagekey=B6WK4-4RYXSNC-1-7&amp;_cdi=6896&amp;_user=145269&amp;_pii=S0749596X07001398&amp;_origin=browse&amp;_zone=rslt_list_item&amp;_coverDate=11%2F30%2F2008&amp;_sk=999409995&amp;wchp=dGLzVtz-zSkWA&amp;md5=d2179733af0fe37dad420f6767694c8a&amp;ie=/sdarticle.pdf">Mixed-effects modeling with crossed random effects for subjects and items</a>. <span class="caps">R.H.</span> Baayen, <span class="caps">D.J.</span> Davidson <span class="amp">&amp;</span> <span class="caps">D.M.</span> Bates. Journal of Memory and Language, Volume 59, Issue 4, November 2008,&nbsp;390-412.</li>
+<li><a href="http://www.ejwagenmakers.com/BayesCourse/BayesBook.html">A Course in Bayesian Graphical Modeling for Cognitive Science</a>, Michael D. Lee <span class="amp">&amp;</span> Eric-Jan&nbsp;Wagenmakers.</li>
+</ul>
+<p>Schedule and&nbsp;materials:</p>
+<ol>
+<li>Brief overview of the phenomena and the dataset; binomial &#8220;t-test&#8221; comparing the wide-scope preference of Subjects vs. Objects; the binomial &#8220;t-test&#8221; in WinBUGS and comparison with the glm() estimates: <a href="/files/CLG_quant_scope_1.r"><span class="caps">CLG</span>-quant-scope-1.r</a></li>
+<li>Generalizing the binomial &#8220;t-test&#8221; to a binomial &#8220;<span class="caps">ANOVA</span>&#8221; comparing the wide-scope preference of Subjects (reference category) vs. 9 other grammatical functions (Objects, Adjuncts, existential Pivots, various prepositional phrases); generalizing the WinBUGS &#8220;t-test&#8221; script to the binomial &#8220;<span class="caps">ANOVA</span>&#8221; model; comparison with the glm() estimates: <a href="/files/CLG_quant_scope_2.r"><span class="caps">CLG</span>-quant-scope-2.r</a></li>
+<li>Summary of most of the material presented in spring 2010, up to and including multiple linear regression and graphical comparison of a multiple regression model (for the dataset we generated) and the simple regression models we obtain by dropping predictors: <a href="/files/CLG_regression_fall2010_1.r"><span class="caps">CLG</span>-regression-fall2010-1.r</a></li>
+<li>Model selection (main topic) and a little bit on interactions, multicollinearity and permutation tests: <a href="/files/CLG_regression_fall2010_2.r"><span class="caps">CLG</span>-regression-fall2010-2.r</a></li>
+<li>Confidence intervals and confidence regions for (sets of) coefficients, confidence intervals for predicted mean responses and for predicted responses (and the difference between them), extrapolation: <a href="/files/CLG_regression_fall2010_3.r"><span class="caps">CLG</span>-regression-fall2010-3.r</a></li>
+<li>Robert Henderson introduced the <a href="http://nlp.stanford.edu/software/tagger.shtml">Stanford tagger</a> and <a href="http://www.dcs.shef.ac.uk/~mark/phd/software/chunker.html">Mark Greenwood&#8217;s rule-based <span class="caps">NP</span> chunker</a> and then put them to work on a small part of the tagged <span class="caps">LSAT</span> logic-puzzle corpus we introduced earlier in the quarter: <a href="/files/pos_chunking_script.zip">pos-chunking-script.zip</a></li>
+<li>Regression <span class="amp">&amp;</span> observational data (e.g., corpus data), the proper interpretation of coefficients in multiple regression analyses, partial regression plots, regression and causality, parameter estimation vs.  prediction, practical difficulties for regression analysis: <a href="/files/CLG_regression_fall2010_4.r"><span class="caps">CLG</span>-regression-fall2010-4.r</a></li>
+</ol></div>
+	
+        <hr>
+    	   
+    </div>
+        </div>
+
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                Site
+                </li>
+
+                <li><a href="https://abrsvn.github.io/index.html">Home</a></li>
+
+
+
+
+                <!---
+                <li><a href="https://abrsvn.github.io/archives.html">Archives</a>
+                -->                
+                <!---
+                <li><a href="https://abrsvn.github.io/tags.html">Tags</a>
+                -->
+            </ul>
+            </div>
+
+
+
+
+
+
+        </div>     </div>     </div> 
+        <footer id="contentinfo" class="body">
+                <br>
+                <br>
+                <address id="about" class="vcard body">Site created with <a href="http://docs.getpelican.com/">Pelican</a> by Adrian Brasoveanu.</address>
+                <!---
+                <p><a href="https://abrsvn.github.io">Adrian Brasoveanu</a> &copy; Adrian Brasoveanu</p>
+                -->
+        </footer>
+</div>
+</body>
+</html>

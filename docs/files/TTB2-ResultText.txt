@@ -1,0 +1,20 @@
+There are 15 search orders sampled in the posterior.
+> for (i in 1:nut) {
++    cat(paste("Order=(", paste(ut[i,],collapse=" "), "), Estimated Mass=", round(matches[i]/sum(matches),4), ", Accuracy=", pc[i], sep="","\n"))
++ }
+Order=(6 4 3 5 1 8 7 9 2), Estimated Mass=0.3111, Accuracy=0.7583
+Order=(6 4 3 5 1 9 7 8 2), Estimated Mass=0.3, Accuracy=0.7583
+Order=(6 4 3 5 2 9 7 8 1), Estimated Mass=0.0922, Accuracy=0.7583
+Order=(6 4 3 5 2 8 7 9 1), Estimated Mass=0.0889, Accuracy=0.7583
+Order=(6 4 3 5 1 9 8 7 2), Estimated Mass=0.0867, Accuracy=0.7583
+Order=(8 4 3 5 1 7 6 9 2), Estimated Mass=0.0322, Accuracy=0.7577
+Order=(6 4 3 5 2 9 8 7 1), Estimated Mass=0.0267, Accuracy=0.7583
+Order=(6 4 2 5 3 9 7 8 1), Estimated Mass=0.0211, Accuracy=0.7577
+Order=(6 4 2 5 3 8 7 9 1), Estimated Mass=0.0189, Accuracy=0.7577
+Order=(8 4 3 5 2 7 6 9 1), Estimated Mass=0.0078, Accuracy=0.7577
+Order=(6 4 2 5 3 9 8 7 1), Estimated Mass=0.0044, Accuracy=0.7577
+Order=(8 4 2 5 3 7 6 9 1), Estimated Mass=0.0033, Accuracy=0.7571
+Order=(6 3 4 5 1 8 7 9 2), Estimated Mass=0.0033, Accuracy=0.7568
+Order=(6 3 4 5 1 9 8 7 2), Estimated Mass=0.0022, Accuracy=0.7568
+Order=(6 3 4 5 2 8 7 9 1), Estimated Mass=0.0011, Accuracy=0.7568
+> 

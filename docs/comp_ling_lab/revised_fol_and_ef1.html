@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Adrian Brasoveanu</title>
+    <meta name="description" content="">
+    <meta name="author" content="Adrian Brasoveanu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://abrsvn.github.io/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/local.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/pygments.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="https://abrsvn.github.io/index.html">Adrian Brasoveanu</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+
+
+        </ul>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Computational Formal Semantics: <span class="caps">FOL</span> (revised) and English Fragment&nbsp;1</h1>
+Mon 13 May 2013
+
+by Adrian Brasoveanu
+ 
+
+
+        </div>
+	
+        <div><p>Plan for the May 14 (11 am-12 pm) meeting: The <strong>first-order logic (<span class="caps">FOL</span>)</strong> files have been revised along the lines we discussed last time.  I replaced the old modules with the new ones, so please download them again and place them in the same&nbsp;folder:</p>
+<ul>
+<li><span class="caps">FOL</span> syntax: <a href="/files/PredLsyn.hs">PredLsyn.hs</a></li>
+<li>the corresponding <span class="caps">FOL</span> semantics: <a href="/files/PredLsem.hs">PredLsem.hs</a></li>
+<li>a <span class="caps">FOL</span> model: <a href="/files/Model.hs">Model.hs</a></li>
+<li>the <span class="caps">GHCI</span> script <a href="/files/PredLghci.hs">PredLghci.hs</a> we will use to introduce and interact with the above&nbsp;modules</li>
+</ul>
+<p>We will also introduce <strong>our first English fragment <span class="caps">EF1</span></strong>. Please download the files below and place them in the same folder as the <span class="caps">FOL</span> files&nbsp;above:</p>
+<ul>
+<li><span class="caps">EF1</span> syntax: <a href="/files/EF1syn.hs">EF1syn.hs</a></li>
+<li>the corresponding <span class="caps">EF1</span> semantics: <a href="/files/EF1sem.hs">EF1sem.hs</a></li>
+<li>the <span class="caps">GHCI</span> script <a href="/files/EF1ghci.hs">EF1ghci.hs</a> we will use to introduce and interact with the above&nbsp;modules</li>
+</ul>
+<p>Note that <span class="caps">EF1</span> is only indirectly interpreted, what we actually define in the <a href="/files/EF1sem.hs">EF1sem.hs</a> module is a compositional English-to-<span class="caps">FOL</span> translation procedure. Eng. sentences are indirectly interpreted: they receive whatever interpretation the corresponding <span class="caps">FOL</span> formulas&nbsp;have.</p>
+<p>Moreover, all Eng. expressions are translated, and this is done compositionally: the translation of a complex expression is a function of the translations of its parts and the way the parts are syntactically put together. But only the translations of Eng. sentences are <span class="caps">FOL</span> formulas, so only these receive an interpretation. We will assign (direct) interpretations to all Eng. expressions in our fragment when we turn to English Fragment 2 (<span class="caps">EF2</span>), which will also include the non-first-order-definable generalized quantifier <em>most</em>.</p></div>
+	
+        <hr>
+    	   
+    </div>
+        </div>
+
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                Site
+                </li>
+
+                <li><a href="https://abrsvn.github.io/index.html">Home</a></li>
+
+
+
+
+                <!---
+                <li><a href="https://abrsvn.github.io/archives.html">Archives</a>
+                -->                
+                <!---
+                <li><a href="https://abrsvn.github.io/tags.html">Tags</a>
+                -->
+            </ul>
+            </div>
+
+
+
+
+
+
+        </div>     </div>     </div> 
+        <footer id="contentinfo" class="body">
+                <br>
+                <br>
+                <address id="about" class="vcard body">Site created with <a href="http://docs.getpelican.com/">Pelican</a> by Adrian Brasoveanu.</address>
+                <!---
+                <p><a href="https://abrsvn.github.io">Adrian Brasoveanu</a> &copy; Adrian Brasoveanu</p>
+                -->
+        </footer>
+</div>
+</body>
+</html>

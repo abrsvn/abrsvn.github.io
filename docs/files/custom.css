@@ -1,0 +1,3 @@
+/* Optional Jupyter/nbconvert custom stylesheet.
+   The imported notebook HTML files already contain their main CSS inline.
+   This no-op file prevents missing custom.css requests. */

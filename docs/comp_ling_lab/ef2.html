@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Adrian Brasoveanu</title>
+    <meta name="description" content="">
+    <meta name="author" content="Adrian Brasoveanu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://abrsvn.github.io/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/local.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/pygments.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="https://abrsvn.github.io/index.html">Adrian Brasoveanu</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+
+
+        </ul>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Computational Formal Semantics: English Fragment 2 and Parsing&nbsp;Preview</h1>
+Sun 19 May 2013
+
+by Adrian Brasoveanu
+ 
+
+
+        </div>
+	
+        <div><p>Plan for the May 21 (11 am-12 pm) meeting: we will finish up the discussion of <span class="caps">EF1</span> syntax and semantics and we will introduce <strong>our second English fragment <span class="caps">EF2</span></strong>. The discussion and code will be based on ch. 7 of the &#8220;Computational Semantics&#8221; textbook by van Eijck <span class="amp">&amp;</span> Unger.  Please download the files below and place them in the same&nbsp;folder:</p>
+<ul>
+<li><span class="caps">EF1</span> syntax: <a href="/files/EF1syn.hs">EF1syn.hs</a>; we keep the same syntax as before, our previous semantics did not interpret all the determiners listed in the <span class="caps">EF1</span> syntax&nbsp;module</li>
+<li><span class="caps">EF2</span> semantics: <a href="/files/EF2sem.hs">EF2sem.hs</a>; the <span class="caps">EF2</span> semantics module provides direct, compositional interpretations for all Eng. expressions in our fragment, including the non-first-order-definable generalized quantifier <em>most</em></li>
+<li>the model we already used for both <span class="caps">FOL</span> and <span class="caps">EF1</span>: <a href="/files/Model.hs">Model.hs</a> &#8212; the <span class="caps">GHCI</span> script <a href="/files/EF2ghci.hs">EF2ghci.hs</a> we will use to introduce and interact with the above&nbsp;modules</li>
+</ul>
+<p>After we wrap up <span class="caps">EF2</span>, the rest of our meetings this quarter will be dedicated to parsing. Parsing is perhaps not obviously related to our current main topic (computational modeling of formal semantics). But parsing is an essential component if we want to embed our semantic models into psychologically realistic models of the human sentence/discourse comprehension&nbsp;process.</p>
+<p>Building models of sentence/discourse processing with semantically explicit commitments is useful for formal semanticists for at least two reasons. First, this can further constrain our theories of human semantic competence: semantic theories should be embeddable in broader theories of human linguistic performance and it is largely unexplored how we can achieve this for the detailed theories currently available in the formal semantics&nbsp;literature.</p>
+<p>Secondly, building processing models that take formal semantics seriously, i.e., that incorporate the highly structured, hierarchical and abstract representations and operations common in formal semantics, will enable us to connect in a very direct and formally explicit manner (<em>i</em>) our semantic theories and (<em>ii</em>) the kinds of behavioral measures that are common in psycholinguistics (e.g., reaction times in self-paced reading or eye-tracking&nbsp;tasks).</p>
+<p>Although they do not include any (systematic) discussion of formal semantics, the three papers below provide detailed discussions of parsing in the context of developing psychologically realistic models of human sentence&nbsp;comprehension:</p>
+<ul>
+<li>S. Narayanan <span class="amp">&amp;</span> D. Jurafsky (2002): <a href="http://www.stanford.edu/~jurafsky/nips01.pdf">A Bayesian Model Predicts Human Parse Preference and Reading Time in Sentence&nbsp;Processing</a></li>
+<li>S. Narayanan <span class="amp">&amp;</span> D. Jurafsky (2004): <a href="http://www1.icsi.berkeley.edu/~snarayan/newcog.pdf">A Bayesian Model of Human Sentence&nbsp;Processing</a></li>
+<li>J. Hale (2011): <a href="https://courses.cit.cornell.edu/jth99/whatrational-ms.pdf">What a rational parser would&nbsp;do</a></li>
+</ul>
+<p>The hope is that the frameworks proposed in these papers could be enriched with the kind of hypotheses, representations and operations we use in formal semantics analyses of natural language&nbsp;phenomena.</p></div>
+	
+        <hr>
+    	   
+    </div>
+        </div>
+
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                Site
+                </li>
+
+                <li><a href="https://abrsvn.github.io/index.html">Home</a></li>
+
+
+
+
+                <!---
+                <li><a href="https://abrsvn.github.io/archives.html">Archives</a>
+                -->                
+                <!---
+                <li><a href="https://abrsvn.github.io/tags.html">Tags</a>
+                -->
+            </ul>
+            </div>
+
+
+
+
+
+
+        </div>     </div>     </div> 
+        <footer id="contentinfo" class="body">
+                <br>
+                <br>
+                <address id="about" class="vcard body">Site created with <a href="http://docs.getpelican.com/">Pelican</a> by Adrian Brasoveanu.</address>
+                <!---
+                <p><a href="https://abrsvn.github.io">Adrian Brasoveanu</a> &copy; Adrian Brasoveanu</p>
+                -->
+        </footer>
+</div>
+</body>
+</html>

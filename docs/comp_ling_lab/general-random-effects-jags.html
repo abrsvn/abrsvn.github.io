@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Adrian Brasoveanu</title>
+    <meta name="description" content="">
+    <meta name="author" content="Adrian Brasoveanu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://abrsvn.github.io/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/local.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/pygments.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="https://abrsvn.github.io/index.html">Adrian Brasoveanu</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+
+
+        </ul>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Estimating general random-effect structures with <span class="caps">JAGS</span></h1>
+Fri 28 June 2013
+
+by Adrian Brasoveanu
+ 
+
+
+        </div>
+	
+        <div><p>Given the importance of being able to estimate general random-effect structures for mixed-effects models (see <a href="http://idiom.ucsd.edu/~rlevy/papers/barr-levy-scheepers-tily-8-aug-2011-submitted.pdf">this paper</a> by Barr, Levy, Scheepers <span class="amp">&amp;</span> Tily, for example), I put together a tutorial on how to estimate such models in R and <span class="caps">JAGS</span>.</p>
+<p>This is easy to do for mixed-effects linear models in R with the <strong>lmer()</strong> function, but the advantage of being able to do it with <span class="caps">JAGS</span>/<span class="caps">BUGS</span> is that we can then use basically the same code to estimate general random-effect structures for any other models, e.g., binomial probit/logit mixed-effects models, ordinal probit/logit mixed-effects models&nbsp;etc.</p>
+<p>Mixed-effect models contain factors, or more generally covariates, with both fixed and random effects. We constrain the values for at least one set of effects (intercepts and/or slopes) to come from a normal distribution. This is what the random-effects assumption usually means (usually; in general, random effects can come from any distribution).  There are at least three sets of assumptions that one can make about the random effects for the intercept and/or the slope of regression lines that are fitted to grouped data (in all our cases: grouped by&nbsp;subjects):</p>
+<ul>
+<li>Models of type 1: only intercepts are random, but slopes are identical for all&nbsp;subjects</li>
+<li>Models of type 2: both intercepts and slopes are random, but they are&nbsp;independent</li>
+<li>Models of type 3: both intercepts and slopes are random and there is a correlation between&nbsp;them</li>
+</ul>
+<p><strong>The R <span class="amp">&amp;</span> <span class="caps">JAGS</span> script is available <a href="/files/general_correlated_ranefs_bayes_jags.r">here</a>.</strong> The material in this presentation is based on <a href="http://www.stat.columbia.edu/~gelman/arm/">Gelman <span class="amp">&amp;</span> Hill (2007)</a>, <a href="http://www.mbr-pwrc.usgs.gov/software/kerybook/">Kery (2010)</a>, and notes <a href="http://www.unc.edu/courses/2010fall/ecol/563/001/docs/lectures/lecture28.htm">here</a> and <a href="http://people.tamu.edu/~daveamp/Bugs.ppt">here</a>.</p>
+<p><strong>Contents of the&nbsp;script:</strong></p>
+<ol>
+<li>first, we generate a random-coefficients data set under a model of type 2 where both intercepts and slopes are uncorrelated random&nbsp;effects</li>
+<li>we then fit both a random-intercepts (type 1) and a random-coefficients model without correlation (type 2) to this dataset (both in R with lmer() and in <span class="caps">JAGS</span>)</li>
+<li>next, we generate a second data set that includes a correlation between random intercepts and random slopes and adopt the random-coefficients model with correlation between intercepts and slopes (type 3) to analyze&nbsp;it</li>
+<li>there is only one way to do this in R with lmer(); but we estimate this model with <span class="caps">JAGS</span> in 2 different ways:<ul>
+<li>by separately modeling the sd.s of the 2 random-effect distributions (the intercepts and the slopes) and the correlation between the 2&nbsp;distributions</li>
+<li>by modeling all three parameters simultaneously with a scaled inverse Wishart prior; this second way has much better mixing and it also generalizes immediately to more complex random effects structures involving 3 or more correlated random&nbsp;effects</li>
+</ul>
+</li>
+<li>finally, we turn to general random-effect structures: we simulate a third data set that includes 3 correlated random effects (intercepts and 2 distinct slope vectors) and show how the random-coefficients model with correlations between intercepts and slopes generalizes to account for this kind of random-effect structure; we do the analysis both in R with lmer() and in <span class="caps">JAGS</span> with a scaled inverse Wishart&nbsp;prior</li>
+</ol></div>
+	
+        <hr>
+    	   
+    </div>
+        </div>
+
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                Site
+                </li>
+
+                <li><a href="https://abrsvn.github.io/index.html">Home</a></li>
+
+
+
+
+                <!---
+                <li><a href="https://abrsvn.github.io/archives.html">Archives</a>
+                -->                
+                <!---
+                <li><a href="https://abrsvn.github.io/tags.html">Tags</a>
+                -->
+            </ul>
+            </div>
+
+
+
+
+
+
+        </div>     </div>     </div> 
+        <footer id="contentinfo" class="body">
+                <br>
+                <br>
+                <address id="about" class="vcard body">Site created with <a href="http://docs.getpelican.com/">Pelican</a> by Adrian Brasoveanu.</address>
+                <!---
+                <p><a href="https://abrsvn.github.io">Adrian Brasoveanu</a> &copy; Adrian Brasoveanu</p>
+                -->
+        </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Adrian Brasoveanu</title>
+    <meta name="description" content="">
+    <meta name="author" content="Adrian Brasoveanu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://abrsvn.github.io/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/local.css" rel="stylesheet">
+    <link href="https://abrsvn.github.io/theme/pygments.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="https://abrsvn.github.io/index.html">Adrian Brasoveanu</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+
+
+        </ul>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Course materials for Sem 3 (Fall 2013): Computational Formal Semantics with&nbsp;Haskell</h1>
+Wed 27 November 2013
+
+by Adrian Brasoveanu
+ 
+
+
+        </div>
+	
+        <div><p>Semantics 3 (fall 2013; upper div. undergraduate course, <span class="caps">UCSC</span> Linguistics) was dedicated to introducing computational formal semantics with Haskell. The course materials (syllabus, lectures notes, hw assignments, solutions etc.) are provided below. The <strong>ghci</strong> commands are numbered in the same way in the <em>pdf</em> and the corresponding <em>hs</em> files for ease of&nbsp;reference.</p>
+<p>The&nbsp;syllabus:</p>
+<ul>
+<li><a href="/files/syllabus_Sem3_comp_formal_sem.pdf">Sem 3&nbsp;syllabus</a></li>
+</ul>
+<p>Intro to Haskell lecture&nbsp;notes:</p>
+<ul>
+<li><a href="/files/intro_to_haskell1.pdf">intro-to-haskell1.pdf</a>, <a href="/files/intro_to_haskell1.hs">intro-to-haskell1.hs</a>: the basics, e.g., arithmetic, boolean operators, functions, &#8220;if&#8221; statements, lists, tuples&nbsp;etc.</li>
+<li><a href="/files/intro_to_haskell2.pdf">intro-to-haskell2.pdf</a>, <a href="/files/intro_to_haskell2.hs">intro-to-haskell2.hs</a>: types and&nbsp;typeclasses</li>
+<li><a href="/files/intro_to_haskell3.pdf">intro-to-haskell3.pdf</a>, <a href="/files/intro_to_haskell3.hs">intro-to-haskell3.hs</a>: the syntax for function definitions, e.g., pattern matching, as-patterns, guards, &#8220;where&#8221; bindings, &#8220;let&#8221; bindings, &#8220;case&#8221;&nbsp;expressions</li>
+<li><a href="/files/intro_to_haskell4.pdf">intro-to-haskell4.pdf</a>, <a href="/files/intro_to_haskell4.hs">intro-to-haskell4.hs</a>: recursion and thinking&nbsp;recursively</li>
+<li><a href="/files/intro_to_haskell5.pdf">intro-to-haskell5.pdf</a>, <a href="/files/intro_to_haskell5.hs">intro-to-haskell5.hs</a>: curried functions, higher order functions and the structure of complex computations (be they Haskell programs or natural language&nbsp;meanings)</li>
+<li><a href="/files/intro_to_haskell6.pdf">intro-to-haskell6.pdf</a>, <a href="/files/intro_to_haskell6.hs">intro-to-haskell6.hs</a>: maps and filters, lambdas, function application, function&nbsp;composition</li>
+<li><a href="/files/intro_to_haskell7.pdf">intro-to-haskell7.pdf</a>, <a href="/files/intro_to_haskell7.hs">intro-to-haskell7.hs</a>: left and right folds, strict and lazy folds,&nbsp;scans</li>
+<li><a href="/files/intro_to_haskell8.pdf">intro-to-haskell8.pdf</a>, <a href="/files/intro_to_haskell8.hs">intro-to-haskell8.hs</a>: modules (importing them, importing functions from modules, importing modules without certain functions, qualified imports) and intro to the <em>Data.List</em>&nbsp;module</li>
+<li><a href="/files/intro_to_haskell9.pdf">intro-to-haskell9.pdf</a>, <a href="/files/intro_to_haskell9.hs">intro-to-haskell9.hs</a>: intro to the <em>Data.Char</em> and <em>Data.Set</em> modules, making our own modules, hierarchical&nbsp;modules</li>
+<li><a href="/files/intro_to_haskell10.pdf">intro-to-haskell10.pdf</a>, <a href="/files/intro_to_haskell10.hs">intro-to-haskell10.hs</a>: intro to algebraic data types, record syntax, type constructors (a.k.a.  parametrized&nbsp;types)</li>
+<li><a href="/files/intro_to_haskell11.pdf">intro-to-haskell11.pdf</a>, <a href="/files/intro_to_haskell11.hs">intro-to-haskell11.hs</a>: deriving instances of typeclasses, type synonyms, recursive data&nbsp;types</li>
+</ul>
+<p>Intro to computational formal semantics lecture&nbsp;notes:</p>
+<ul>
+<li><a href="/files/comp_formal_sem1.pdf">comp_formal_sem1.pdf</a>, <a href="/files/comp_formal_sem1.hs">comp_formal_sem1.hs</a>, <a href="/files/PropLsyn.hs">PropLsyn.hs</a>, <a href="/files/PropLsem.hs">PropLsem.hs</a>: syntax of propositional logic, semantics of propositional logic, tautologies, satisfiability and contradictions, checking for entailment between two formulas, Context Set&nbsp;update</li>
+<li><a href="/files/comp_formal_sem2.pdf">comp_formal_sem2.pdf</a>, <a href="/files/comp_formal_sem2.hs">comp_formal_sem2.hs</a>, <a href="/files/PredLsyn.hs">PredLsyn.hs</a>, <a href="/files/Model.hs">Model.hs</a>, <a href="/files/PredLsem.hs">PredLsem.hs</a>: syntax of first-order predicate logic (the definition of terms, atomic formulas, more on variables, identity, propositional operators, complex terms, quantifiers), semantics of first-order predicate&nbsp;logic</li>
+<li><a href="/files/comp_formal_sem3.pdf">comp_formal_sem3.pdf</a>, <a href="/files/comp_formal_sem3.hs">comp_formal_sem3.hs</a>, <a href="/files/EF1syn.hs">EF1syn.hs</a>, <a href="/files/EF1sem.hs">EF1sem.hs</a>, <a href="/files/PredLsyn.hs">PredLsyn.hs</a>, <a href="/files/Model.hs">Model.hs</a>, <a href="/files/PredLsem.hs">PredLsem.hs</a>: syntax of our English fragment, semantics part 1: English-to-<span class="caps">FOL</span> translation, semantics part 2: evaluation in a model (model&nbsp;checking)</li>
+<li><a href="/files/comp_formal_sem4.pdf">comp_formal_sem4.pdf</a>, <a href="/files/comp_formal_sem4.hs">comp_formal_sem4.hs</a>, <a href="/files/EF1syn.hs">EF1syn.hs</a>, <a href="/files/EF2sem.hs">EF2sem.hs</a>, <a href="/files/Model.hs">Model.hs</a>: syntax of our English fragment, (direct) semantics of our English&nbsp;fragment</li>
+<li><a href="/files/comp_formal_sem5.pdf">comp_formal_sem5.pdf</a>, <a href="/files/comp_formal_sem5.hs">comp_formal_sem5.hs</a>, <a href="/files/BasicDef.hs">BasicDef.hs</a>, <a href="/files/Palindromes.hs">Palindromes.hs</a>, <a href="/files/ParserCombinatorsMini.hs">ParserCombinatorsMini.hs</a>: basic definitions for parsing, recognition, generation and parsing for a simple palindrome grammar, parser combinators, simple application of parser combinators: the palindrome grammar, another example: parsing based on a simple Eng.&nbsp;grammar</li>
+<li><a href="/files/comp_formal_sem6.pdf">comp_formal_sem6.pdf</a>, <a href="/files/comp_formal_sem6.hs">comp_formal_sem6.hs</a>, <a href="/files/BasicDef.hs">BasicDef.hs</a>, <a href="/files/Lexicon.hs">Lexicon.hs</a>, <a href="/files/ParserCombinators.hs">ParserCombinators.hs</a>, <a href="/files/ParserNoMvt.hs">ParserNoMvt.hs</a>, <a href="/files/Tree2Tex.hs">Tree2Tex.hs</a>: a more realistic lexicon (features, syntactic categories, the lexicon, combining syntactic categories, string preprocessing, the lexer), parsing a more realistic English fragment without mvt (parser for leaf nodes, parser for sentences, <span class="caps">NP</span>, <span class="caps">DET</span>, <span class="caps">CN</span> and <span class="caps">PP</span> parsers, <span class="caps">VP</span> parser, bringing it all&nbsp;together)</li>
+</ul>
+<p>Hw assignments and example&nbsp;solutions:</p>
+<ul>
+<li><a href="/files/hw1.pdf">hw1.pdf</a>, <a href="/files/hw1.hs">hw1.hs</a>, <a href="/files/hw1_sol.pdf">hw1_sol.pdf</a>, <a href="/files/hw1_sol.hs">hw1_sol.hs</a></li>
+<li><a href="/files/hw2.pdf">hw2.pdf</a>, <a href="/files/hw2.hs">hw2.hs</a>, <a href="/files/hw2_sol.pdf">hw2_sol.pdf</a>, <a href="/files/hw2_sol.hs">hw2_sol.hs</a>, <a href="/files/textBrown.hs">textBrown.hs</a></li>
+<li><a href="/files/hw3.pdf">hw3.pdf</a>, <a href="/files/hw3.hs">hw3.hs</a>, <a href="/files/hw3_sol.pdf">hw3_sol.pdf</a>, <a href="/files/hw3_sol.hs">hw3_sol.hs</a></li>
+<li><a href="/files/hw4.pdf">hw4.pdf</a>, <a href="/files/hw4.hs">hw4.hs</a>, <a href="/files/hw4_sol.pdf">hw4_sol.pdf</a>, <a href="/files/hw4_sol.hs">hw4_sol.hs</a></li>
+<li><a href="/files/hw5.pdf">hw5.pdf</a>, <code>hw5.hs</code>, <a href="/files/hw5_sol.pdf">hw5_sol.pdf</a>, <a href="/files/hw5_sol.hs">hw5_sol.hs</a>, <a href="/files/L0syn.hs">L0syn.hs</a>, <a href="/files/L0sem.hs">L0sem.hs</a></li>
+</ul></div>
+	
+        <hr>
+    	   
+    </div>
+        </div>
+
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                Site
+                </li>
+
+                <li><a href="https://abrsvn.github.io/index.html">Home</a></li>
+
+
+
+
+                <!---
+                <li><a href="https://abrsvn.github.io/archives.html">Archives</a>
+                -->                
+                <!---
+                <li><a href="https://abrsvn.github.io/tags.html">Tags</a>
+                -->
+            </ul>
+            </div>
+
+
+
+
+
+
+        </div>     </div>     </div> 
+        <footer id="contentinfo" class="body">
+                <br>
+                <br>
+                <address id="about" class="vcard body">Site created with <a href="http://docs.getpelican.com/">Pelican</a> by Adrian Brasoveanu.</address>
+                <!---
+                <p><a href="https://abrsvn.github.io">Adrian Brasoveanu</a> &copy; Adrian Brasoveanu</p>
+                -->
+        </footer>
+</div>
+</body>
+</html>

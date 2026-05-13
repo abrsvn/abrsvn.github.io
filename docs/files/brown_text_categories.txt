@@ -1,0 +1,16 @@
+ProseType	GenreGroup	Category	ContentOfCategory	NumberOfTexts 
+informative	press	A	reportage	44
+informative	press	B	editorial	27
+informative	press	C	review	17
+informative	generalProse	D	religion	17
+informative	generalProse	E	skillsTradesHobbies	36
+informative	generalProse	F	popularLore	48
+informative	generalProse	G	belleslettresBiographiesEssays	75
+informative	generalProse	H	miscellaneous	30
+informative	learned	J	science	80
+imaginative	fiction	K	generalFiction	29
+imaginative	fiction	L	misteryDetectiveFiction	24
+imaginative	fiction	M	scienceFiction	6
+imaginative	fiction	N	adventureWestern	29
+imaginative	fiction	P	romanceLoveStory	29
+imaginative	fiction	R	humor	9
